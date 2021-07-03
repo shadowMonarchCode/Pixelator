@@ -1,0 +1,7 @@
+.pixel{
+    height: 1.25rem;
+    width: 1.25rem;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 0rem;
+}

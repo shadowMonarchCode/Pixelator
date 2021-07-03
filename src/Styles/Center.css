@@ -1,0 +1,25 @@
+.center {
+  position: relative;
+  margin: 0rem;
+  padding: 0rem;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+  display: inline-block;
+}
+.canvas {
+  width: 60rem;
+  height: 37rem;
+  margin: 3.5rem auto;
+  background-color: #aaaaaa;
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+table,
+.tr,
+.td {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+}
