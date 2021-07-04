@@ -8,22 +8,26 @@ const Body = () => {
   const [color, setColor] = useState({
     backgroundColor: "gainsboro",
   });
-  const [state, setState] = useState(false);
   const ref = React.createRef();
-  console.log(ref);
-  const onClear = () => {
-    setState(true);
-  };
   const onClick = (event) => {
     setColor({
       backgroundColor: event.target.className,
     });
   };
+  const onClear = () => {
+    const px = document.getElementsByClassName("pixel");
+    for (let item of px) {
+      item.style.backgroundColor = "gainsboro";
+    }
+  };
   return (
     <div className="body">
-      <Left onClear={onClear} />
-      <Center color={color} state={state} reference={ref}/>
-      <Right color={color} onClick={onClick} reference={ref}/>
+      <Left onClick={onClear} />
+      <Center
+        color={color}
+        reference={ref}
+      />
+      <Right color={color} onClick={onClick} reference={ref} />
     </div>
   );
 };
