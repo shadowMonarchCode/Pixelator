@@ -13,8 +13,8 @@ const Center = (props) => {
   }
   return (
     <div className="center">
-      <div className="canvas" ref={props.reference}>
-        <table>{table(100, 100)}</table>
+      <div className="canvas">
+        <table ref={props.reference}>{table(100, 100)}</table>
       </div>
     </div>
   );

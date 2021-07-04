@@ -12,10 +12,10 @@ const useStyles = makeStyles((theme) => ({
 const Right = (props) => {
   const classes = useStyles();
   const options = {
-    orientation: 'landscape',
-    unit: 'in',
-    format: [4,2]
-};
+    orientation: "landscape",
+    unit: "px",
+    format: [912, 912],
+  };
   const colors = [
     ["red", "yellow", "magenta"],
     ["green", "cyan", "blue"],
@@ -52,9 +52,9 @@ const Right = (props) => {
           targetRef={props.reference}
           filename="div-blue.pdf"
           options={options}
-          x={0.5}
-          y={0.5}
-          scale={0.8}
+          x={0}
+          y={0}
+          scale={0.75}
         >
           {({ toPdf }) => (
             <Button
@@ -65,7 +65,7 @@ const Right = (props) => {
               onClick={toPdf}
               startIcon={<SaveIcon />}
             >
-              Save
+              Download
             </Button>
           )}
         </ReactToPdf>

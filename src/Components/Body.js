@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import Center from "./Center";
 import Left from "./Left";
 import Right from "./Right";
@@ -6,7 +6,7 @@ import "../Styles/Body.css";
 
 const Body = () => {
   const [color, setColor] = useState({
-    backgroundColor: "",
+    backgroundColor: "gainsboro",
   });
   const [state, setState] = useState(false);
   const ref = React.createRef();
@@ -21,7 +21,7 @@ const Body = () => {
   };
   return (
     <div className="body">
-      <Left onClear={onClear}/>
+      <Left onClear={onClear} />
       <Center color={color} state={state} reference={ref}/>
       <Right color={color} onClick={onClick} reference={ref}/>
     </div>
