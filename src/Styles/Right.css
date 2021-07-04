@@ -1,11 +1,10 @@
 .right {
-  position: relative;
   margin: 0rem;
   padding: 0rem;
   width: 14.5%;
   height: 100%;
   align-items: center;
-  display: inline-block;
+  flex: 1;
 }
 .color {
   width: 6rem;
@@ -22,7 +21,7 @@
 .download-btn {
   width: 6rem;
   height: 2rem;
-  margin: 4rem auto;
+  margin: 2rem auto;
   background-color: white;
 }
 .color-palette td{

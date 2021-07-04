@@ -1,17 +1,20 @@
 import "../Styles/Center.css";
 import Pixels from "./Pixels";
 
-const Center = () => {
-  const tableCol = (size, row) => {
-    return [...Array(size)].map((e, i) => <td className="td"><Pixels key={i} row={row} col={i} /></td>);
+const Center = (props) => {
+  const onClick = (event) =>{
+    event.target.style.backgroundColor = props.color.backgroundColor;
+  }
+  const tableCol = (x, y) => {
+    return [...Array(x)].map((e, i) => <td className="td" id={y + "_" + i} onClick={onClick}><Pixels key={i} /></td>);
   };
-  const table = (size) => {
-    return [...Array(size)].map((e, i) => <tr className="tr">{tableCol(size, i)}</tr> );
+  const table = (x, y) => {
+    return [...Array(y)].map((e, i) => <tr className="tr">{tableCol(x, i)}</tr> );
   }
   return (
     <div className="center">
       <div className="canvas">
-        <table>{table(100)}</table>
+        <table>{table(100, 100)}</table>
       </div>
     </div>
   );

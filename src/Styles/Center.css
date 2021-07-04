@@ -1,11 +1,10 @@
 .center {
-  position: relative;
   margin: 0rem;
   padding: 0rem;
   width: 70%;
   height: 100%;
   align-items: center;
-  display: inline-block;
+  flex: 1;
 }
 .canvas {
   width: 60rem;
