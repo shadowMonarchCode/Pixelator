@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { React, useState } from "react";
 import Center from "./Center";
 import Left from "./Left";
 import Right from "./Right";
@@ -8,6 +8,12 @@ const Body = () => {
   const [color, setColor] = useState({
     backgroundColor: "",
   });
+  const [state, setState] = useState(false);
+  const ref = React.createRef();
+  console.log(ref);
+  const onClear = () => {
+    setState(true);
+  };
   const onClick = (event) => {
     setColor({
       backgroundColor: event.target.className,
@@ -15,9 +21,9 @@ const Body = () => {
   };
   return (
     <div className="body">
-      <Left />
-      <Center color={color}/>
-      <Right color={color} onClick={onClick}/>
+      <Left onClear={onClear}/>
+      <Center color={color} state={state} reference={ref}/>
+      <Right color={color} onClick={onClick} reference={ref}/>
     </div>
   );
 };

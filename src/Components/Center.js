@@ -6,14 +6,14 @@ const Center = (props) => {
     event.target.style.backgroundColor = props.color.backgroundColor;
   }
   const tableCol = (x, y) => {
-    return [...Array(x)].map((e, i) => <td className="td" id={y + "_" + i} onClick={onClick}><Pixels key={i} /></td>);
+    return [...Array(x)].map((e, i) => <td className="td" id={y + "_" + i} onClick={onClick} ><Pixels key={i} /></td>);
   };
   const table = (x, y) => {
     return [...Array(y)].map((e, i) => <tr className="tr">{tableCol(x, i)}</tr> );
   }
   return (
     <div className="center">
-      <div className="canvas">
+      <div className="canvas" ref={props.reference}>
         <table>{table(100, 100)}</table>
       </div>
     </div>
