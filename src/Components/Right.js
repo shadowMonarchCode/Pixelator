@@ -30,15 +30,16 @@ const Right = (props) => {
       <div className="color" style={props.color}></div>
       <div className="color-palette">
         <table>
-          {colors.map((rows) => {
+          {colors.map((rows, i) => {
             return (
-              <tr>
-                {rows.map((c) => {
+              <tr key={i}>
+                {rows.map((c, index) => {
                   return (
                     <td
                       className={c}
                       onClick={props.onClick}
                       style={{ backgroundColor: c }}
+                      key={index}
                     ></td>
                   );
                 })}
@@ -50,7 +51,7 @@ const Right = (props) => {
       <div className="download-btn">
         <ReactToPdf
           targetRef={props.reference}
-          filename="div-blue.pdf"
+          filename={props.name + ".pdf"}
           options={options}
           x={0}
           y={0}
@@ -59,7 +60,7 @@ const Right = (props) => {
           {({ toPdf }) => (
             <Button
               variant="contained"
-              color="primary"
+              color="light"
               size="large"
               className={classes.button}
               onClick={toPdf}
